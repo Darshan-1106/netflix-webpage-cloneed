@@ -4,6 +4,7 @@ import { Movie } from "@/data/movies";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Play, Plus, ThumbsUp, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WatchPartyButton from "./WatchPartyButton";
 
 interface MovieModalProps {
   movie: Movie;
@@ -53,7 +54,7 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
           <div className="absolute bottom-4 left-4 right-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{movie.title}</h2>
             
-            <div className="flex space-x-3">
+            <div className="flex flex-wrap gap-3">
               <Button className="bg-netflix-white text-netflix-black hover:bg-netflix-white/90 flex items-center gap-1">
                 <Play size={16} fill="black" /> Play
               </Button>
@@ -63,6 +64,7 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
               <Button variant="outline" className="border-white border-2 rounded-full px-2">
                 <ThumbsUp size={16} />
               </Button>
+              <WatchPartyButton />
             </div>
           </div>
         </div>
